@@ -1,6 +1,12 @@
-module.exports = {
+export default {
   webpack: (config) => {
-    config.watchOptions.poll = 300;
-    return config;
+    return {
+      ...config,
+      watchOptions: {
+        ...config.watchOptions,
+        poll: 300
+      }
+    };
   },
+  allowedDevOrigins: ['ticketing.dev']
 };
